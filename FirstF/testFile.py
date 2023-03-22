@@ -1,14 +1,16 @@
 from bs4 import BeautifulSoup as bs
 import requests
 
-url = "https://www.decathlon.com.dz/chaussures-randonnee-trek-homme/308131-53866-chaussures-de-randonnee-nh100-homme.html#/177-demodelsize-27239/11217-demodelcolor-8554624"
+url = "https://www.newegg.ca/grey-dowinx-ls-668903-chair-with-accessory/p/2T4-029X-00026?Item=9SIBC1THF56631"
 
 result = requests.get(url)
 doc = bs(result.text, "html.parser")
 
 #print(doc.prettify())
-prices = doc.find_all(text="dzd")
-print(len(prices))
+prices = doc.find_all(text="$")
+parent = prices[0].parent
+strong = parent.find("strong")
+print(strong.string)
 
 #-------------------------------------------
 """with open("index.html", "r") as f:
