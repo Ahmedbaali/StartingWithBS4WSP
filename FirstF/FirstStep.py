@@ -10,7 +10,7 @@ doc = bs(result.text, "html.parser")
 prices = doc.find_all(text="dzd")
 print(len(prices))
 
-#-------------------------------------------
+#-----------------------------------------------
 """with open("index.html", "r") as f:
     doc = bs(f, "html.parser")
 
