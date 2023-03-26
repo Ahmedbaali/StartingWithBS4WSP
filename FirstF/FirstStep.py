@@ -1,13 +1,13 @@
 from bs4 import BeautifulSoup as bs
 import requests
 
-url = "https://www.decathlon.com.dz/chaussures-randonnee-trek-homme/308131-53866-chaussures-de-randonnee-nh100-homme.html#/177-demodelsize-27239/11217-demodelcolor-8554624"
+url = "https://technostationery.com/stylo-a-bille-focus-1-0-mm-techno.html"
 
 result = requests.get(url)
 doc = bs(result.text, "html.parser")
 
 #print(doc.prettify())
-prices = doc.find_all(text="dzd")
+prices = doc.find_all(text="DZD")
 print(len(prices))
 
 #-----------------------------------------------
